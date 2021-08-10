@@ -30,6 +30,12 @@ It will take some time for all the building to finish. After it's done you can a
 
 eg. http://localhost 
 
+You can remove docker images and containers running following script
+
+```bash
+./scripts/prod/uninstall.sh
+```
+
 ## To do
 
 * Write frontend tests
