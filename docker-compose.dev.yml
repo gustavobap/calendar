@@ -7,10 +7,6 @@ services:
     image: calendar_api_dev:calendar
     build:
       target: development
-    ports:
-      - 3000:3000
-    environment:
-      FRONT_END_ORIGIN: "http://localhost:3001"
     volumes:
       - ./calendar_api:/home/${DOCKER_UNAME}/
       - ./gem/home:/home/${DOCKER_UNAME}/.gem
@@ -21,9 +17,5 @@ services:
     image: calendar_frontend_dev:calendar
     build:
       target: development
-    ports:
-      - 3001:3000
-    environment:
-      REACT_APP_API_ORIGIN: "http://localhost:3000"
     volumes:
       - ./calendar_frontend:/home/${DOCKER_UNAME}/

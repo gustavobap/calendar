@@ -6,6 +6,8 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: calendar_api
   calendar_api:
+    ports:
+      - ${API_PORT}:3000
     build:
       context: ./calendar_api
       dockerfile: ../calendar_api.Dockerfile
@@ -17,6 +19,7 @@ services:
         DB_HOST: calendar_db
         DB_PASSWORD: calendar_api
     environment:
+      FRONT_END_ORIGIN: "http://${ORIGIN_IP}:${FRONTEND_PORT}"
       DB_USER: postgres
       DB_HOST: calendar_db
       DB_PASSWORD: calendar_api
@@ -24,6 +27,8 @@ services:
     depends_on:
       - calendar_db
   calendar_frontend:
+    ports:
+      - ${FRONTEND_PORT}:3000
     build:
       context: ./calendar_frontend
       dockerfile: ../calendar_frontend.Dockerfile
@@ -31,4 +36,7 @@ services:
         UID: ${DOCKER_UID}
         UNAME: ${DOCKER_UNAME}
         PROJECT: calendar_frontend
+        REACT_APP_API_ORIGIN: "http://${ORIGIN_IP}:${API_PORT}"
+    environment:
+      REACT_APP_API_ORIGIN: "http://${ORIGIN_IP}:${API_PORT}"
     user: ${DOCKER_UNAME}
