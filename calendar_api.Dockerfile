@@ -50,5 +50,6 @@ COPY --chown=${UNAME}:wheel ./calendar_api ../
 
 RUN gem install bundler -v "~>2.0"
 RUN bundle install
+RUN EDITOR=none rails credentials:edit
 
-ENTRYPOINT bundle exec rake db:create db:migrate && rails server -b 0.0.0.0
+ENTRYPOINT RAILS_ENV=production bundle exec rake db:create db:migrate && rails server -b 0.0.0.0 -e production
