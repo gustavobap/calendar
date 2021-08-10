@@ -1,0 +1,29 @@
+version: "3.5"
+services:
+  calendar_db:
+    container_name: calendar_db_dev
+  calendar_api:
+    container_name: calendar_api_dev
+    image: calendar_api_dev:calendar
+    build:
+      target: development
+    ports:
+      - 3000:3000
+    environment:
+      FRONT_END_ORIGIN: "http://localhost:3001"
+    volumes:
+      - ./calendar_api:/home/${DOCKER_UNAME}/
+      - ./gem/home:/home/${DOCKER_UNAME}/.gem
+      - ./gem/usr_local:/usr/local/bundle
+      - ./gem/lib:/usr/local/lib/ruby/gems
+  calendar_frontend:
+    container_name: calendar_frontend_dev
+    image: calendar_frontend_dev:calendar
+    build:
+      target: development
+    ports:
+      - 3001:3000
+    environment:
+      REACT_APP_API_ORIGIN: "http://localhost:3000"
+    volumes:
+      - ./calendar_frontend:/home/${DOCKER_UNAME}/

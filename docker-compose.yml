@@ -1,0 +1,34 @@
+version: "3.5"
+services:
+  calendar_db:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: calendar_api
+  calendar_api:
+    build:
+      context: ./calendar_api
+      dockerfile: ../calendar_api.Dockerfile
+      args:
+        UID: ${DOCKER_UID}
+        UNAME: ${DOCKER_UNAME}
+        PROJECT: calendar_api
+        DB_USER: postgres
+        DB_HOST: calendar_db
+        DB_PASSWORD: calendar_api
+    environment:
+      DB_USER: postgres
+      DB_HOST: calendar_db
+      DB_PASSWORD: calendar_api
+    user: ${DOCKER_UNAME}
+    depends_on:
+      - calendar_db
+  calendar_frontend:
+    build:
+      context: ./calendar_frontend
+      dockerfile: ../calendar_frontend.Dockerfile
+      args:
+        UID: ${DOCKER_UID}
+        UNAME: ${DOCKER_UNAME}
+        PROJECT: calendar_frontend
+    user: ${DOCKER_UNAME}

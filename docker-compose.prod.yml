@@ -1,0 +1,22 @@
+version: "3.5"
+services:
+  calendar_db:
+    container_name: calendar_db_prod
+  calendar_api:
+    container_name: calendar_api_prod
+    image: calendar_api_prod:calendar
+    build:
+      target: production
+    ports:
+      - 3003:3000
+    environment:
+      FRONT_END_ORIGIN: "http://localhost:3004"
+  calendar_frontend:
+    container_name: calendar_frontend_prod
+    image: calendar_frontend_prod:calendar
+    build:
+      target: production
+      args:
+        REACT_APP_API_ORIGIN: "http://localhost:3003"
+    ports:
+      - 3004:3000
