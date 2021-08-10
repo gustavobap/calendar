@@ -115,7 +115,7 @@ const ReminderForm = (props: Props) => {
   };
 
   return (
-    <form className="ReminderForm" onSubmit={handleSave}>
+    <form className="reminder-form" onSubmit={handleSave}>
       {isLoading() && <CircularProgress />}
       {isError() && (
         <div>
@@ -183,7 +183,7 @@ const ReminderForm = (props: Props) => {
         </Grid>
         <Grid item>
           <ButtonGroup
-            className="ReminderForm-button-group"
+            className="reminder-form-button-group"
             disabled={isLoading()}
           >
             <Button type="submit" variant="contained" color="primary">
