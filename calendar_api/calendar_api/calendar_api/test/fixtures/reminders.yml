@@ -1,0 +1,44 @@
+first_in_june_21:
+  date: <%= DateTime.new(2021, 6, 1)%>
+  color: "white"
+  message: "first_in_june_21"
+last_in_june_21:
+  date: <%= DateTime.new(2021, 6, 30, 23, 59, 59)%>
+  color: "white"
+  message: "last_in_june_21"
+
+first_in_july_21:
+  date: <%= DateTime.new(2021, 7, 1)%>
+  color: "white"
+  message: "first_in_july_21"
+last_in_july_21:
+  date: <%= DateTime.new(2021, 7, 31, 23, 59, 59)%>
+  color: "white"
+  message: "last_in_july_21"
+
+first_in_august_21:
+  date: <%= DateTime.new(2021, 8, 1)%>
+  color: "white"
+  message: "first_in_august_21"
+last_in_august_21:
+  date: <%= DateTime.new(2021, 8, 31, 23, 59, 59)%>
+  color: "white"
+  message: "last_in_august_21"
+
+first_in_december_21_tz_plus_2:
+  date: <%= DateTime.new(2021, 11, 30, 22, 0, 0)%>
+  color: "white"
+  message: "first_in_december_21_tz_plus_2"
+last_in_december_21_tz_plus_2:
+  date: <%= DateTime.new(2021, 12, 31, 21, 59, 59)%>
+  color: "white"
+  message: "last_in_december_21_tz_plus_2"
+
+first_in_december_22_tz_minus_2:
+  date: <%= DateTime.new(2022, 12, 1, 2, 0, 0)%>
+  color: "white"
+  message: "first_in_december_22_tz_minus_2"
+last_in_december_22_tz_minus_2:
+  date: <%= DateTime.new(2023, 1, 1, 1, 59, 59)%>
+  color: "white"
+  message: "last_in_december_22_tz_minus_2"
