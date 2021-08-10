@@ -178,7 +178,9 @@ class Calendar extends React.Component<Props, State> {
 
         <div className="Calendar-grid">
           {WEEK_DAYS_NAMES.map((weekDay) => (
-            <div className="Calendar-week-header">{weekDay}</div>
+            <div key={++dayIndex} className="Calendar-week-header">
+              {weekDay}
+            </div>
           ))}
           {dayList.map((day, inx) =>
             day === null ? this.renderDay(0, inx) : day
