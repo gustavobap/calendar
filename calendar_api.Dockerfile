@@ -16,14 +16,20 @@ RUN adduser -S -G wheel \
     --uid "${UID}" \
     "${UNAME}"
 
-USER ${UNAME}
-WORKDIR "/home/${UNAME}/${PROJECT}/${PROJECT}"
-
 ENV DB_HOST ${DB_HOST}
 ENV DB_USER ${DB_USER}
 ENV DB_PASSWORD ${DB_PASSWORD}
 
 FROM base as development
+
+ARG UNAME
+ARG PROJECT
+
+RUN apk --no-cache add sudo busybox-suid
+RUN echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel
+
+USER ${UNAME}
+WORKDIR "/home/${UNAME}/${PROJECT}/${PROJECT}"
 
 RUN git config --global user.name "Gustavo Peixoto"
 RUN git config --global user.email "gustavo.bul.mobile@gmail.com"
@@ -35,8 +41,12 @@ FROM base as production
 
 ARG UNAME
 ARG UID
+ARG PROJECT
 
 COPY --chown=${UNAME}:wheel ./calendar_api ../
+
+USER ${UNAME}
+WORKDIR "/home/${UNAME}/${PROJECT}/${PROJECT}"
 
 RUN gem install bundler -v "~>2.0"
 RUN bundle install

@@ -16,8 +16,14 @@
 # end
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
+
+	origin = "#{ENV['FRONT_END_ORIGIN']}"
+	if(origin.ends_with? ":80")
+	  origin=origin[0..-4]
+	end
+
 	allow do
-	  origins "#{ENV['FRONT_END_ORIGIN']}"
+	  origins origin
   
 	  resource '*',
 		headers: :any,
