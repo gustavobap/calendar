@@ -2,6 +2,8 @@
 
 This is a calendar application to manage reminders. It comprises of two separate apps, a backend built with **Ruby on Rails** and a frontend built with **React**.
 
+The application works with different timezones. If you access it from a different browser, it will show reminder times according to it's configured timezone.
+
 ## Demo
 
 There is a demonstration deployed at http://50.18.100.6/
@@ -28,6 +30,12 @@ It will take some time for all the building to finish. After it's done you can a
 
 eg. http://localhost 
 
+## To do
+
+* Write frontend tests
+* Write end to end tests
+* Make it multi user, with secure login
+* Configure HTTPS
 
 ## License
 GNU General Public License v3.0
