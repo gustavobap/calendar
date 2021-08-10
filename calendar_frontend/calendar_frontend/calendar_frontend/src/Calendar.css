@@ -1,14 +1,14 @@
-.Calendar {
+.calendar {
   background-color: #3f51b55d;
 }
 
-.CalendarHeader {
+.celendar-header {
   padding: 20px;
   min-width: 1064px;
   background-color: #3f51b5a4;
 }
 
-.Calendar-week-header {
+.calendar-week-header {
   min-width: 150px;
   min-height: 30px;
   border: #3f51b5d2 thin solid;
@@ -17,7 +17,7 @@
   background-color: #3f51b5a4;
 }
 
-.Calendar-grid {
+.calendar-grid {
   padding-left: 50px;
   padding-right: 50px;
   min-width: 1064px;

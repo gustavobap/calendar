@@ -143,8 +143,8 @@ class Calendar extends React.Component<Props, State> {
     console.debug(dayList);
 
     return (
-      <div className="Calendar">
-        <div className="CalendarHeader">
+      <div className="calendar">
+        <div className="celendar-header">
           <Grid>
             <Grid item style={{ display: "flex", gap: "1rem" }}>
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
@@ -176,9 +176,9 @@ class Calendar extends React.Component<Props, State> {
           </Grid>
         </div>
 
-        <div className="Calendar-grid">
+        <div className="calendar-grid">
           {WEEK_DAYS_NAMES.map((weekDay) => (
-            <div key={++dayIndex} className="Calendar-week-header">
+            <div key={++dayIndex} className="calendar-week-header">
               {weekDay}
             </div>
           ))}
@@ -272,7 +272,7 @@ class Calendar extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="Calendar">
+      <div className="calendar">
         {this.state.showRemindersList
           ? this.renderRemindersList()
           : this.renderCalendar()}
