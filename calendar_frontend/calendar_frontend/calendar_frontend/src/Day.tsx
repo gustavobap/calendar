@@ -21,6 +21,7 @@ class Day extends React.Component<Props> {
         <Card
           className={this.props.firstDayOfWeek ? "day-first-of-week" : "day"}
           variant="outlined"
+          style={{ backgroundColor: "transparent" }}
         />
       );
     }

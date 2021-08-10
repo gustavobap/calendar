@@ -140,6 +140,9 @@ class Calendar extends React.Component<Props, State> {
       dayIndex++;
     }
 
+    //remove unused slots
+    dayList.splice(dayIndex);
+
     console.debug(dayList);
 
     return (
