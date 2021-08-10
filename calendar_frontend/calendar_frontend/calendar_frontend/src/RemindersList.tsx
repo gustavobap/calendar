@@ -96,8 +96,8 @@ class RemindersList extends React.Component<Props, State> {
 
   private renderRemindersList() {
     return (
-      <div className="RemindersList">
-        <ButtonGroup className="RemindersList-button-group">
+      <div className="reminder-list">
+        <ButtonGroup className="reminder-list-button-group">
           <Button
             variant="contained"
             color="primary"
@@ -109,12 +109,12 @@ class RemindersList extends React.Component<Props, State> {
             Close
           </Button>
         </ButtonGroup>
-        <div className="RemindersList-header">
+        <div className="reminder-list-header">
           {this.props.day.toDateString()}
         </div>
         {this.props.reminders.length === 0 && (
-          <Card className="RemindersList-message-card">
-            <CardContent className="RemindersList-message-card-content">
+          <Card className="reminder-list-message-card">
+            <CardContent className="reminder-list-message-card-content">
               No notes for today =)
             </CardContent>
           </Card>
@@ -123,19 +123,19 @@ class RemindersList extends React.Component<Props, State> {
         {this.props.reminders.map((reminder) => (
           <Grid
             container
-            className="RemindersList-message-container"
+            className="reminder-list-message-container"
             direction={"column"}
             spacing={1}
           >
             <Grid item>
-              <Card className="RemindersList-message-card">
+              <Card className="reminder-list-message-card">
                 <CardHeader
                   title={this.timeString(reminder.date)}
                   titleTypographyProps={{ variant: "caption" }}
                   style={{ backgroundColor: reminder.color }}
                 ></CardHeader>
                 <CardContent
-                  className="RemindersList-message-card-content"
+                  className="reminder-list-message-card-content"
                   style={{ backgroundColor: reminder.color }}
                 >
                   <Typography variant="body1">{reminder.message}</Typography>

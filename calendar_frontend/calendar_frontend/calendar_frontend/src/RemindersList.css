@@ -1,25 +1,25 @@
-.RemindersList {
+.reminder-list {
   width: 500px;
 }
 
-.RemindersList-header {
+.reminder-list-header {
   font-size: calc(1px + 2vmin);
   padding: 2px;
   text-align: center;
 }
 
-.RemindersList-button-group {
+.reminder-list-button-group {
   padding: 10px;
 }
 
-.RemindersList-message-container {
+.reminder-list-message-container {
   padding: 10px;
 }
 
-.RemindersList-message-card {
+.reminder-list-message-card {
   font-size: calc(10px + 1.5vmin);
 }
 
-.RemindersList-message-card-content {
+.reminder-list-message-card-content {
   white-space: pre-wrap;
 }
