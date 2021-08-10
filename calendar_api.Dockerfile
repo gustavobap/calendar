@@ -43,10 +43,10 @@ ARG UNAME
 ARG UID
 ARG PROJECT
 
-COPY --chown=${UNAME}:wheel ./calendar_api ../
-
 USER ${UNAME}
 WORKDIR "/home/${UNAME}/${PROJECT}/${PROJECT}"
+
+COPY --chown=${UNAME}:wheel ./calendar_api ../
 
 RUN gem install bundler -v "~>2.0"
 RUN bundle install
