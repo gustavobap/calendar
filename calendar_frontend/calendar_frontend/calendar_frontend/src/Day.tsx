@@ -19,7 +19,7 @@ class Day extends React.Component<Props> {
     if (this.props.number <= 0) {
       return (
         <Card
-          className={this.props.firstDayOfWeek ? "Day-first-of-week" : "Day"}
+          className={this.props.firstDayOfWeek ? "day-first-of-week" : "day"}
           variant="outlined"
         />
       );
@@ -27,7 +27,7 @@ class Day extends React.Component<Props> {
 
     return (
       <Card
-        className={this.props.firstDayOfWeek ? "Day-first-of-week" : "Day"}
+        className={this.props.firstDayOfWeek ? "day-first-of-week" : "day"}
         variant="outlined"
       >
         <CardHeader title={this.props.number}></CardHeader>

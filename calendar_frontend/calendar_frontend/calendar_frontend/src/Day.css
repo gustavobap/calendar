@@ -1,13 +1,10 @@
-.Day,
-.Day-first-of-week {
+.day,
+.day-first-of-week {
   float: left;
   min-width: 150px;
   min-height: 150px;
 }
 
-.Day-first-of-week {
+.day-first-of-week {
   clear: left;
-}
-
-.Day-reminder-count {
 }
