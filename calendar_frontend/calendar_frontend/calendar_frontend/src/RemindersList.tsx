@@ -13,7 +13,6 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
-import { AxiosResponse } from "axios";
 
 interface Props {
   day: Date;

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
 import { Reminder } from "./model/Reminder";
 import "./ReminderForm.css";
 import {
