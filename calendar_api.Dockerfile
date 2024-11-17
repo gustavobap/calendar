@@ -48,7 +48,7 @@ WORKDIR "/home/${UNAME}/${PROJECT}/${PROJECT}"
 
 COPY --chown=${UNAME}:wheel ./calendar_api ../
 
-RUN gem install bundler -v "~>2.0"
+RUN gem install bundler -v "2.4.22"
 RUN bundle install
 RUN EDITOR=none rails credentials:edit
 
